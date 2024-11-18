@@ -51,3 +51,12 @@ S
 ## Estrutura do Projeto
 
 - `TestaEnvio.java`: Código fonte da solução.
+
+## Possíveis implementações
+
+- Exceptions mais específicas.
+- Comunicação com banco de dados, cadastrando as saidas onde é possível e onde não é possível enviar a bola na dada caixa.
+- Usar Spring Data para comunicar com banco.
+- Lombok para facilitar a criação das entidades.
+- Subir um serviço REST que recebe essas requisições.
+- Documentar o serviço com Swagger.
