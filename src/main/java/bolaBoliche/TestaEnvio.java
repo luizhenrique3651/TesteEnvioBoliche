@@ -31,7 +31,7 @@ public class TestaEnvio {
     	}
     	//Caso alguma validação lance a exception, o programa reinicia.
     	catch(Exception e) {
-    		e.printStackTrace();
+    		System.out.println(e+ "\n"+ mensagemErro());
     		
     		main(args);
     	}
@@ -44,8 +44,11 @@ public class TestaEnvio {
 			return numero;
 		}else 
 		{
-			throw new Exception("Numero inválido, digite um número no formato inteiro, e de tamanho válido (1 <= X <= 10.000)");
+			throw new Exception(mensagemErro());
 		}
     	
+    }
+    public static String mensagemErro() {
+    	return "Numero inválido, digite um número no formato inteiro, e de tamanho válido (1 <= X <= 10.000)";
     }
 }
