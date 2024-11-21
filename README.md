@@ -1,64 +1,101 @@
 
 # Problema SEDEX - Verificação de Compatibilidade de Bolas de Boliche
 
-Este projeto é uma solução para um problema que verifica se uma bola de boliche cabe dentro de uma caixa específica. Dado o diâmetro de uma bola e as três dimensões de uma caixa (altura, largura e profundidade), o programa determina se a bola pode ser transportada em uma determinada caixa usando as regras fornecidas.
+Este é um sistema de gestão de testes de envio de boliche, onde são realizados testes de envio de pacotes com bolas de boliche, registrando as dimensões dos pacotes e o status do envio.
 
-## Descrição do Problema
+## Tecnologias Utilizadas
 
-- A entrada consiste em dois conjuntos de valores:
-  1. Um inteiro `N` representando o diâmetro da bola (1 ≤ N ≤ 10.000).
-  2. Três inteiros `A`, `L` e `P` representando as dimensões da caixa (altura, largura e profundidade), onde (1 ≤ A, L, P ≤ 10.000).
+- Java 17
+- Spring Boot 3.x
+- PostgreSQL
+- Maven
+- Docker
+- Flyway
+- Lombok
+- Spring Data
+- Swagger
 
-- Saída:
-  - O programa deve imprimir "S" se a bola cabe na caixa.
-  - O programa deve imprimir "N" caso contrário.
+## Funcionalidades
 
-## Como Executar o Programa
-
-### Pré-requisitos
-
-- Java 8 ou superior instalado.
-
-### Compilação e Execução
-
-1. Compile o código usando o `javac`:
-
-   ```bash
-   javac TestaEnvio.java
-   ```
-
-2. Execute o programa:
-
-   ```bash
-   java TestaEnvio
-   ```
-
-### Exemplo de Uso
-
-**Entrada:**
-```
-10
-15 20 30
-```
-
-**Saída:**
-```
-S
-```
-
-**Descrição:** Neste exemplo, a bola de diâmetro 10 cabe dentro da caixa com dimensões 15x20x30.
+- Cadastro de testes de envio
+- Consultar testes de envio por ID
+- Atualização de testes de envio
+- Exclusão de testes de envio
+- Armazenamento dos testes de envio no banco de dados PostgreSQL
 
 ## Estrutura do Projeto
 
-- `TestaEnvio.java`: Código fonte da solução.
+- **Controller**: Endpoints REST que expõem as funcionalidades do sistema.
+- **Service**: Lógica de negócio que manipula os dados dos testes de envio.
+- **Repository**: Repositórios JPA que interagem com o banco de dados.
+- **Entity**: Representação das entidades do banco de dados, como TesteEnvio.
+- **DTOs**: Objetos de Transferência de Dados para comunicação entre a API e o cliente.
+- **Enum**: Definição dos status do envio.
+- **Validation**: Lógica de validação dos testes de envio.
+- **Exception**: Tratamento de exceções para os casos de testes de envio não encontrados.
 
-## Possíveis futuras implementações
+## Como Rodar o Projeto
 
-- Exceptions mais específicas.
-- Comunicação com banco de dados, cadastrando as saidas onde é possível e onde não é possível enviar a bola na dada caixa.
-- Usar Spring Data para comunicar com banco.
-- Lombok para facilitar a criação das entidades.
-- Subir um serviço REST que recebe essas requisições.
-- Documentar o serviço com Swagger.
-- Spring Boot e Maven para buildar e executar o projeto.
-- Docker para subir os serviços de SGBD e App
+### Pré-requisitos
+
+- Docker
+- Java 17
+- Maven
+
+### Rodando com Docker
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/luizhenrique3651/Ocorrencias.git
+   cd Ocorrencias
+   ```
+
+2. Construa e suba os containers:
+   ```bash
+   docker-compose up --build
+   ```
+
+3. O projeto estará disponível em `http://localhost:8080/swagger-ui/index.html`.
+
+### Rodando Localmente
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/luizhenrique3651/Ocorrencias.git
+   cd Ocorrencias
+   ```
+
+2. Construa o projeto com Maven:
+   ```bash
+   mvn clean install
+   ```
+
+3. Rode o projeto com o Spring Boot:
+   ```bash
+   mvn spring-boot:run
+   ```
+
+4. O projeto estará disponível em `http://localhost:8080/swagger-ui/index.html`.
+
+## Endpoints
+
+### GET /teste-envio
+Retorna uma lista de todos os testes de envio.
+
+### GET /teste-envio/{id}
+Retorna um teste de envio específico, dado um ID.
+
+### POST /teste-envio
+Cria um novo teste de envio.
+
+### PUT /teste-envio/{id}
+Atualiza um teste de envio existente.
+
+### DELETE /teste-envio/{id}
+Deleta um teste de envio.
+
+
+
+## Futuras implementações
+
+- Casos de teste
