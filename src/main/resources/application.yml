@@ -2,7 +2,7 @@ spring:
   application:
     name: bolaBoliche
   datasource:
-    url: jdbc:postgresql://postgres-db:5433/sedex_boliche
+    url: jdbc:postgresql://postgres-db:5433/bola_boliche
     username: luiz
     password: luiz123
     driver-class-name: org.postgresql.Driver
@@ -10,3 +10,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+       
+flyway:
+  locations: classpath:db/migration
