@@ -1,7 +1,7 @@
 
 # Problema SEDEX - Verificação de Compatibilidade de Bolas de Boliche
 
-Este é um sistema de gestão de testes de envio de boliche, onde são realizados testes de envio de pacotes com bolas de boliche, registrando as dimensões dos pacotes e o status do envio.
+Este é um sistema de gestão de testes de envio de bolas boliche, onde são realizados testes de envio de pacotes com bolas de boliche, registrando as dimensões dos pacotes e o status do envio.
 
 ## Tecnologias Utilizadas
 
