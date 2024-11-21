@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.buson.entity.TesteEnvio;
+import com.buson.exception.TesteEnvioNotFoundException;
 import com.buson.repository.TesteEnvioRepository;
 import com.buson.validation.TesteEnvioValidator;
 
@@ -45,7 +46,7 @@ public class TesteEnvioService {
 			envio.setStatusEnvio(validator.defineStatus(testeAtualizado));
 			return repo.save(envio);
 		} else {
-			throw new RuntimeException("Teste de Envio não encontrado com o ID: " + id);
+			throw new TesteEnvioNotFoundException(id);
 		}
 	}
 	
@@ -53,7 +54,7 @@ public class TesteEnvioService {
 		if(repo.existsById(id)) {
 			repo.deleteById(id);
 		}else {
-            throw new RuntimeException("Teste de Envio não encontrado com o ID: " + id);
+			throw new TesteEnvioNotFoundException(id);
         }
 	}
 
