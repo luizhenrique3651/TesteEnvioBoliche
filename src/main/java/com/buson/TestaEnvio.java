@@ -1,4 +1,4 @@
-package bolaBoliche;
+package com.buson;
 
 import java.util.Scanner;
 
