@@ -46,8 +46,8 @@ Este é um sistema de gestão de testes de envio de boliche, onde são realizado
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/luizhenrique3651/Ocorrencias.git
-   cd Ocorrencias
+   git clone https://github.com/luizhenrique3651/TesteEnvioBoliche.git
+   cd TesteEnvioBoliche
    ```
 
 2. Construa e suba os containers:
@@ -61,8 +61,8 @@ Este é um sistema de gestão de testes de envio de boliche, onde são realizado
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/luizhenrique3651/Ocorrencias.git
-   cd Ocorrencias
+   git clone https://github.com/luizhenrique3651/TesteEnvioBoliche.git
+   cd TesteEnvioBoliche
    ```
 
 2. Construa o projeto com Maven:
