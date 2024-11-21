@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  postgres-db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: bola_boliche
+      POSTGRES_USER: luiz
+      POSTGRES_PASSWORD: luiz123
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U luiz -d bola_boliche"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/bola_boliche
+      SPRING_DATASOURCE_USERNAME: luiz
+      SPRING_DATASOURCE_PASSWORD: luiz123
+
