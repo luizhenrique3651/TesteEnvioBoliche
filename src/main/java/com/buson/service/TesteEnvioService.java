@@ -32,6 +32,7 @@ public class TesteEnvioService {
 	}
 
 	public TesteEnvio save(TesteEnvio testeEnvio) {
+		testeEnvio.setStatusEnvio(validator.defineStatus(testeEnvio));
 		return repo.save(testeEnvio);
 	}
 

@@ -47,7 +47,7 @@ public class TesteEnvio {
 	
 	public TesteEnvio(TesteEnvioRequestDTO  dto) {
 		this.diametroBola = dto.diametroBola();
-		this.larguraCaixa = dto.diametroBola();
+		this.larguraCaixa = dto.larguraCaixa();
 		this.alturaCaixa = dto.alturaCaixa();
 		this.profundidadeCaixa = dto.profundidadeCaixa();
 		this.statusEnvio = dto.statusEnvio();
