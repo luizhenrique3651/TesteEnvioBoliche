@@ -1,6 +1,7 @@
 package com.buson.entity;
 
 
+import com.buson.dto.TesteEnvioRequestDTO;
 import com.buson.enums.StatusEnvio;
 
 import jakarta.persistence.Column;
@@ -44,4 +45,11 @@ public class TesteEnvio {
 	private StatusEnvio statusEnvio;
 	
 	
+	public TesteEnvio(TesteEnvioRequestDTO  dto) {
+		this.diametroBola = dto.diametroBola();
+		this.larguraCaixa = dto.diametroBola();
+		this.alturaCaixa = dto.alturaCaixa();
+		this.profundidadeCaixa = dto.profundidadeCaixa();
+		this.statusEnvio = dto.statusEnvio();
+	}
 }
