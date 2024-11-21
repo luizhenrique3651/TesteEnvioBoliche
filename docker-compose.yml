@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   postgres-db:
-    image: postgres:13
+    image: postgres:14
     environment:
       POSTGRES_DB: bola_boliche
       POSTGRES_USER: luiz
