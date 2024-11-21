@@ -1,8 +1,12 @@
 package com.buson.entity;
 
 
+import com.buson.enums.StatusEnvio;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,6 +38,10 @@ public class TesteEnvio {
 	
 	@Column(name = "profundidade_caixa", nullable = false)
 	private Integer profundidadeCaixa;
+	
+	@Column(name = "status_envio", nullable = false)
+	@Enumerated(EnumType.STRING)
+	private StatusEnvio statusEnvio;
 	
 	
 }
